@@ -1,0 +1,47 @@
+<div>
+    <h1>Employee Details</h1>
+</div>
+
+<div *ngIf="employee">
+    <form action="">
+        <div class="input-box">
+            <label for="">Name</label>
+            <input type="text" value="{{employee.name}}" disabled="disabled">
+        </div>
+        
+        <div class="input-box">
+            <label for="">Surname</label>
+            <input type="text" value="{{employee.surname}}" disabled="disabled">
+        </div>    
+        
+        <div class="input-box">
+            <label for="">Department</label>
+            <input type="text" value="{{employee.department}}" disabled="disabled">
+        </div>    
+
+        <div class="input-box">
+            <label for="">Shift</label>
+            <input type="text" value="{{employee.shift}}" disabled="disabled">
+        </div>    
+
+        <div class="input-box">
+            <label for="">Status</label>
+            <input type="text" value="{{ employee.active ? 'Active' : 'Inactive'}}" disabled="disabled">
+        </div>    
+
+        <div class="input-box">
+            <label for="">Creation date</label>
+            <input type="text" value="{{employee.creationDate}}" disabled="disabled">
+        </div>    
+
+        <div class="input-box">
+            <label for="">Modification date</label>
+            <input type="text" value="{{employee.modificationDate}}" disabled="disabled">
+        </div>
+
+        <div class="btn-box">
+            <button (click)="DisableEmployee()">Inactive employee</button>
+            <button routerLink="/">Back</button>
+        </div>
+    </form>
+</div>

@@ -1,5 +1,5 @@
 <div class="employee-box">
-    <button>Register new employee</button>
+    <button routerLink="/register">Register new employee</button>
     <div class="input-box">
         <label for="search-input">Search</label>
         <input type="text" id="search-input" placeholder="Find" (input)="search($event)">
@@ -31,8 +31,8 @@
             <td>{{ employee.surname }}</td>
             <td>{{ employee.department }}</td>
             <td>
-                <button>Edit</button>
-                <button>Details</button>
+                <button routerLink="/edit/{{employee.id}}">Edit</button>
+                <button routerLink="/details/{{employee.id}}">Details</button>
             </td>
             <td>
                 <button>Delete</button>

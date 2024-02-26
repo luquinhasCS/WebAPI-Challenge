@@ -18,7 +18,6 @@ export class DetailsComponent implements OnInit {
 
       this.employeeService.GetEmployeeById(this.id).subscribe(dataFromDb => {
         const data = dataFromDb.data;
-
         data.creationDate = new Date(data.creationDate!).toLocaleDateString("pt-BR")
         data.modificationDate = new Date(data.modificationDate!).toLocaleDateString("pt-BR")
 

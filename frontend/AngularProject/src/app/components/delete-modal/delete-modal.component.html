@@ -1,0 +1,16 @@
+<mat-card>
+<div *ngIf="employee">
+    <h1>Do you really want to delete?</h1>
+    <div>
+        <h2 style="font-style: bold;">Employee</h2>
+        <p>{{employee.name}}</p>
+        <h2 style="font-style: bold;">Department</h2>
+        <p>{{employee.department}}</p>
+    </div>
+
+    <div>
+        <button mat-raised-button color="warn" (click)="Delete()">Confirm deletion</button>
+        <button mat-raised-button (click)="Cancel()">Cancel</button>
+    </div>
+</div>
+</mat-card>

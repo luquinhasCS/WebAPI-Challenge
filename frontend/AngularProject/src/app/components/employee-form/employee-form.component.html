@@ -1,40 +1,52 @@
+<mat-card>
 <h1>{{titleBtn}}</h1>
 
 <form [formGroup]="employeeForm" (ngSubmit)="submit()" #formDir="ngForm">
     <input type="hidden" formControlName="id">
 
     <div class="input-box">
-        <label for="name">Name</label>
-        <input type="text" id="name" formControlName="name" required="required" placeholder="Insert the name">
+        <mat-form-field>
+            <mat-label for="name">Name</mat-label>
+            <input type="text" id="name" formControlName="name" required="required" placeholder="Insert the name" matInput />
+        </mat-form-field>
     </div>
 
     <div class="input-box">
-        <label for="surname">Surname</label>
-        <input type="text" id="surname" formControlName="surname" required="required" placeholder="Insert the surname">
+        <mat-form-field>
+            <mat-label for="surname">Surname</mat-label>
+            <input type="text" id="surname" formControlName="surname" required="required" placeholder="Insert the surname"
+                matInput />
+        </mat-form-field>
     </div>
 
     <div class="input-box">
-        <label for="department">Department</label>
-        <select type="text" id="department" formControlName="department" required="required" placeholder="Insert the department">
-            <option value="HR">HR</option>
-            <option value="Financial">Financial</option>
-            <option value="Purchasing">Purchasing</option>
-            <option value="Service">Service</option>
-            <option value="Janitorial">Janitorial</option>
-        </select>
+        <mat-form-field>
+            <mat-label for="department">Department</mat-label>
+            <mat-select type="text" id="department" formControlName="department" required="required"
+                placeholder="Insert the department">
+                <mat-option value="HR">HR</mat-option>
+                <mat-option value="Financial">Financial</mat-option>
+                <mat-option value="Purchasing">Purchasing</mat-option>
+                <mat-option value="Service">Service</mat-option>
+                <mat-option value="Janitorial">Janitorial</mat-option>
+            </mat-select>
+        </mat-form-field>
     </div>
 
     <div class="input-box">
-        <label for="shift">Shift</label>
-        <select type="text" id="shift" formControlName="shift" required="required" placeholder="Insert the shift">
-            <option value="Morning">Morning</option>
-            <option value="Afternoon">Afternoon</option>
-            <option value="Night">Night</option>
-        </select>
+        <mat-form-field>
+            <mat-label for="shift">Shift</mat-label>
+            <mat-select type="text" id="shift" formControlName="shift" required="required" placeholder="Insert the shift">
+                <mat-option value="Morning">Morning</mat-option>
+                <mat-option value="Afternoon">Afternoon</mat-option>
+                <mat-option value="Night">Night</mat-option>
+            </mat-select>
+        </mat-form-field>
     </div>
 
     <div class="btn-box">
-        <button type="submit" [disabled]="!employeeForm.valid">{{actionBtn}}</button>
-        <button routerLink="/">Back</button>
+        <button type="submit" [disabled]="!employeeForm.valid" mat-raised-button color="accent">{{actionBtn}}</button>
+        <button routerLink="/" mat-raised-button>Back</button>
     </div>
 </form>
+</mat-card>

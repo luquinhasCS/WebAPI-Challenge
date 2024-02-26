@@ -31,4 +31,8 @@ export class EmployeeService {
     DisableEmployee(id: Number) : Observable<Response<Employee[]>> {
       return this.http.put<Response<Employee[]>>(`${this.apiUrl}/DisableEmployee/${id}`, id)
     }
+
+    DeleteEmployee(id:number) : Observable<Response<Employee[]>> {
+      return this.http.delete<Response<Employee[]>>(`${this.apiUrl}?id=${id}`)
+    }
 }

@@ -25,7 +25,7 @@ export class EmployeeFormComponent implements OnInit {
       department: new FormControl(this.employeeData ? this.employeeData.department : '', [Validators.required]),
       shift: new FormControl(this.employeeData ? this.employeeData.shift : '', [Validators.required]),
       active: new FormControl(this.employeeData ? this.employeeData.active : true),
-      creationDate: new FormControl(new Date()),
+      creationDate: new FormControl(this.employeeData ? this.employeeData.creationDate : new Date()),
       modificationDate: new FormControl(new Date())
     });
   }

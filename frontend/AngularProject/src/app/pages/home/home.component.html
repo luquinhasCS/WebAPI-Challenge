@@ -1,42 +1,15 @@
+<mat-card>
 <div class="employee-box">
-    <button routerLink="/register">Register new employee</button>
+    <button mat-raised-button color="primary" routerLink="/register">Register new employee</button>
     <div class="input-box">
-        <label for="search-input">Search</label>
-        <input type="text" id="search-input" placeholder="Find" (input)="search($event)">
+        <mat-form-field>
+        <mat-label for="search-input">Search</mat-label>
+        <input matInput type="text" id="search-input" placeholder="Find" (input)="search($event)">
+    </mat-form-field>
     </div>
 </div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th></th>
-            <th>Name</th>
-            <th>Surname</th>
-            <th>Department</th>
-            <th></th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody *ngFor="let employee of employeeList">
-        <tr>
-            <td>
-                <div *ngIf ="employee.active; else inactive">
-                    <img src="../../../assets/images/Ativo.png" alt="" style="width: 20px">
-                </div>
-                <ng-template #inactive>
-                    <img src="../../../assets/images/Inativo.png" alt="" style="width: 20px">
-                </ng-template>
-            </td>
-            <td>{{ employee.name }}</td>
-            <td>{{ employee.surname }}</td>
-            <td>{{ employee.department }}</td>
-            <td>
-                <button routerLink="/edit/{{employee.id}}">Edit</button>
-                <button routerLink="/details/{{employee.id}}">Details</button>
-            </td>
-            <td>
-                <button>Delete</button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<ag-grid-angular class="ag-theme-quartz-dark" [rowData]="employeeList" [columnDefs]="colDefs" [defaultColDef]="defaultColDef" style="height: 500px; width:100%">
+
+</ag-grid-angular>
+</mat-card>

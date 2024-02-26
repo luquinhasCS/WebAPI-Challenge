@@ -1,12 +1,38 @@
-html, body {
-    width: 100vw;
+*{
+    margin: 0;
+    padding: 0
+}
+
+body {
     height: 100%;
 }
 
-.container {
-    width: 100%;
+mat-card{
+    width: 80%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 3rem;
+    margin: 5rem auto 0 auto
+}
+
+mat-form-field{
+    width: 100%;
+
+}
+
+.input-box{
+    width: 500px;
+}
+
+.btn-box {
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-box button{
+    width: 50%;
 }

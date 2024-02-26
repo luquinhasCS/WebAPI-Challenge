@@ -4,6 +4,7 @@ export interface Employee{
     surname: string;
     department: string;
     active: boolean;
+    status: string;
     shift: string;
     creationDate?: string;
     modificationDate?: string;

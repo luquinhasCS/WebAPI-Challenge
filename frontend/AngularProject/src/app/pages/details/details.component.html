@@ -1,3 +1,5 @@
+
+<mat-card>
 <div>
     <h1>Employee Details</h1>
 </div>
@@ -5,43 +7,58 @@
 <div *ngIf="employee">
     <form action="">
         <div class="input-box">
-            <label for="">Name</label>
-            <input type="text" value="{{employee.name}}" disabled="disabled">
+            <mat-form-field>
+                <mat-label for="">Name</mat-label>
+                <input matInput type="text" value="{{employee.name}}" disabled="disabled">
+            </mat-form-field>
         </div>
-        
-        <div class="input-box">
-            <label for="">Surname</label>
-            <input type="text" value="{{employee.surname}}" disabled="disabled">
-        </div>    
-        
-        <div class="input-box">
-            <label for="">Department</label>
-            <input type="text" value="{{employee.department}}" disabled="disabled">
-        </div>    
 
         <div class="input-box">
-            <label for="">Shift</label>
-            <input type="text" value="{{employee.shift}}" disabled="disabled">
-        </div>    
+            <mat-form-field>
+                <mat-label for="">Surname</mat-label>
+                <input matInput type="text" value="{{employee.surname}}" disabled="disabled">
+            </mat-form-field>
+        </div>
 
         <div class="input-box">
-            <label for="">Status</label>
-            <input type="text" value="{{ employee.active ? 'Active' : 'Inactive'}}" disabled="disabled">
-        </div>    
+            <mat-form-field>
+                <mat-label for="">Department</mat-label>
+                <input matInput type="text" value="{{employee.department}}" disabled="disabled">
+            </mat-form-field>
+        </div>
 
         <div class="input-box">
-            <label for="">Creation date</label>
-            <input type="text" value="{{employee.creationDate}}" disabled="disabled">
-        </div>    
+            <mat-form-field>
+                <mat-label for="">Shift</mat-label>
+                <input matInput type="text" value="{{employee.shift}}" disabled="disabled">
+            </mat-form-field>
+        </div>
 
         <div class="input-box">
-            <label for="">Modification date</label>
-            <input type="text" value="{{employee.modificationDate}}" disabled="disabled">
+            <mat-form-field>
+                <mat-label for="">Status</mat-label>
+                <input matInput type="text" value="{{ employee.active ? 'Active' : 'Inactive'}}" disabled="disabled">
+            </mat-form-field>
+        </div>
+
+        <div class="input-box">
+            <mat-form-field>
+                <mat-label for="">Creation date</mat-label>
+                <input matInput type="text" value="{{employee.creationDate}}" disabled="disabled">
+            </mat-form-field>
+        </div>
+
+        <div class="input-box">
+            <mat-form-field>
+                <mat-label for="">Modification date</mat-label>
+                <input matInput type="text" value="{{employee.modificationDate}}" disabled="disabled">
+            </mat-form-field>
         </div>
 
         <div class="btn-box">
-            <button (click)="DisableEmployee()">Inactive employee</button>
-            <button routerLink="/">Back</button>
+            <button (click)="DisableEmployee()" mat-raised-button color="warn">Inactive employee</button>
+            <button routerLink="/" mat-raised-button>Back</button>
         </div>
     </form>
 </div>
+</mat-card>

@@ -6,7 +6,7 @@ namespace WebAPI_challenge.Service.EmployeeService
     {
         Task<ServiceResponse<List<EmployeeModel>>> GetEmployees();
         Task<ServiceResponse<List<EmployeeModel>>> CreateEmployee(EmployeeModel newEmployee);
-        Task<ServiceResponse<List<EmployeeModel>>> GetEmployeeById(int id);
+        Task<ServiceResponse<EmployeeModel>> GetEmployeeById(int id);
         Task<ServiceResponse<List<EmployeeModel>>> UpdateEmployee (EmployeeModel changedEmployee);
         Task<ServiceResponse<List<EmployeeModel>>> DeleteEmployee (int id);
         Task<ServiceResponse<List<EmployeeModel>>> DisableEmployee (int id);

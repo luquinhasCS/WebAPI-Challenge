@@ -88,11 +88,11 @@ namespace WebAPI_challenge.Service.EmployeeService
                     serviceResponse.Data = null;
                     serviceResponse.Message = "User not found!";
                     serviceResponse.Success = false;
-                }  
-
-                employee.Active = true;
+                }
+                employee.Active = false;
                 employee.ModificationDate = DateTime.Now.ToLocalTime();
-
+                
+                
                 _context.Employee.Update(employee);
                 await _context.SaveChangesAsync();
 
@@ -135,19 +135,18 @@ namespace WebAPI_challenge.Service.EmployeeService
             try
             {
                 EmployeeModel employee = _context.Employee.FirstOrDefault(x => x.Id == id);
-                
+
                 if (employee == null)
                 {
                     serviceResponse.Data = null;
-                    serviceResponse.Message = "User not found!";
+                    serviceResponse.Message = "Usuário não localizado!";
                     serviceResponse.Success = false;
                 }
-                
+
                 serviceResponse.Data = employee;
 
             }
-            catch(Exception ex)
-
+            catch (Exception ex)
             {
                 serviceResponse.Message = ex.Message;
                 serviceResponse.Success = false;
@@ -185,11 +184,6 @@ namespace WebAPI_challenge.Service.EmployeeService
             }
 
             return serviceResponse;
-        }
-
-        Task<ServiceResponse<List<EmployeeModel>>> IEmployeeInterface.GetEmployeeById(int id)
-        {
-            throw new NotImplementedException();
         }
     }
 }

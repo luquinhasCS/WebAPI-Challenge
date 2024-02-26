@@ -16,8 +16,10 @@ export class EmployeeFormComponent implements OnInit {
 
   employeeForm! : FormGroup;
 
-  constructor() { }
+  
+  constructor() {}
   ngOnInit(): void {
+    
     this.employeeForm = new FormGroup({
       id: new FormControl(this.employeeData ? this.employeeData.id : 0),
       name: new FormControl(this.employeeData ? this.employeeData.name : '', [Validators.required]),

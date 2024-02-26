@@ -28,8 +28,9 @@ export class EmployeeService {
       return this.http.put<Response<Employee[]>>(`${this.apiUrl}`, employee);
     }
 
-    DisableEmployee(id: Number) : Observable<Response<Employee[]>> {
-      return this.http.put<Response<Employee[]>>(`${this.apiUrl}/DisableEmployee/${id}`, id)
+    DisableEmployee(id: number) : Observable<Response<Employee[]>> {
+      console.log(id)
+      return this.http.put<Response<Employee[]>>(`${this.apiUrl}/DisableEmployee?id=${id}`, id)
     }
 
     DeleteEmployee(id:number) : Observable<Response<Employee[]>> {

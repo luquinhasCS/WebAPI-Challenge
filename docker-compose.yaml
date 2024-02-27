@@ -1,0 +1,11 @@
+services:
+  backend:
+    build: backend/WebAPI challenge/.
+    ports: 
+    - "44324:80"
+  frontend:
+    build: frontend/AngularProject/.
+    ports:
+    - "4200:80"
+
+    

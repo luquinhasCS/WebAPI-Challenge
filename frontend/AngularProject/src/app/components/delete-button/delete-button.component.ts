@@ -28,8 +28,8 @@ export class DeleteButtonComponent implements OnInit, ICellRendererAngularComp {
 
   OpenDialog(employeeId:number){
       this.dialog.open(DeleteModalComponent, {
-        width: '350px',
-        height: '350px',
+        width: '500px',
+        height: '500px',
         data: {employeeId: employeeId}
       });
   }

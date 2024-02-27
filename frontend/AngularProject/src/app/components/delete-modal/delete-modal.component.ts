@@ -29,7 +29,7 @@ export class DeleteModalComponent implements OnInit {
   }
   
   Delete(){
-    this.employeeService.DeleteEmployee(this.employeeId).subscribe((dataFromDb)=>{
+    this.employeeService.DeleteEmployee(this.inputdata.employeeId).subscribe((dataFromDb)=>{
       this.ref.close();
       window.location.reload();
     });

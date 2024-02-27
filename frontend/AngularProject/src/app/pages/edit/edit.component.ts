@@ -19,6 +19,7 @@ export class EditComponent implements OnInit {
     const id = Number(this.route.snapshot.paramMap.get('id'));
 
     this.employeeService.GetEmployeeById(id).subscribe(dataFromDb => {
+      console.log(dataFromDb.data);
       this.employee = dataFromDb.data
     })
   }
